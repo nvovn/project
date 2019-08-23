@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>车主预约信息</title>
+	<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+	<meta content="yes" name="apple-mobile-web-app-capable"/>
+	<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+	<meta content="telephone=no" name="format-detection"/>
+	<link href="css/style1.css" rel="stylesheet" type="text/css"/>
+</head>
+<style>
+	.red{
+		color: #ee6a78!important;
+		font-weight: bold;
+	}
+	.green{
+		color: #81a87e!important;
+		font-weight: bold;
+	}
+	.car_cz{
+		font-size: 16px!important;
+		font-weight: bold!important;
+	}
+	.btn button{
+		width:100%;
+		margin-top: 10px;
+		font-size: 12px;
+		padding: 6px;
+		color: #FFFFFF;
+		background: #5373c6;
+		border: none;
+	}
+	.btn button:hover{
+		background-color:darkblue ;
+	}
+</style>
+<body>
+
+<section class="aui-flexView">
+	<header class="aui-navBar aui-navBar-fixed b-line">
+		<a href="javascript:;" class="aui-navBar-item">
+			<i class="icon icon-return"></i>
+		</a>
+		<div class="aui-center">
+			<span class="aui-center-title">车主预约信息</span>
+		</div>
+	</header>
+	<section class="aui-scrollView">
+
+		<div class="aui-flex aui-flex-lag" style="border-bottom: solid 1px lightgray">
+			<div class="aui-flex-box">
+				<h2 class="car_cz">
+					车主姓名：<em>张三</em>
+				</h2>
+				
+				<h2>
+					是否联系车主：<em>是</em>
+				</h2>
+				<h2>
+					审核状态：<em class="green">审核通过</em>
+				</h2>
+				<h2>
+					创建时间：<em >2019-07-12 09:30:00</em>
+				</h2>
+			</div>
+			<div>
+				<div class="btn"><button>查看</button></div>
+				<div  class="btn"><button>确认还车</button></div>
+			</div>
+		</div>
+		
+		<div class="aui-flex aui-flex-lag" style="border-bottom: solid 1px lightgray">
+			<div class="aui-flex-box">
+				<h2 class="car_cz">
+					车主姓名：<em>李四</em>
+				</h2>
+				
+				<h2>
+					是否联系车主：<em>否</em>
+				</h2>
+				<h2>
+					审核状态：<em class="red">审核未通过</em>
+				</h2>
+				<h2>
+					创建时间：<em >2019-07-12 09:30:00</em>
+				</h2>
+			</div>
+			<div>
+				<div class="btn"><button>查看</button></div>
+				<div  class="btn"><button>确认还车</button></div>
+			</div>
+		</div>
+		
+
+	</section>
+
+</section>
+</body>
+</html>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/layer.js"></script>
