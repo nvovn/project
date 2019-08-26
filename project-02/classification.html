@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+	<!--<![endif]-->
+
+	<head>
+		<meta charset="utf-8">
+		<title>交通类占比</title>
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<!-- Mobile Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Favicon -->
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+		<link href="css/animations.css" rel="stylesheet">
+		<link href="css/content1.0.css" rel="stylesheet">
+		<script type="text/javascript" src="plugins/jquery.min.js"></script>
+		<script type="text/javascript" src="js/times.js"></script>
+
+	</head>
+
+	<body ng-app="myApp" ng-controller="customersCtrl">
+		<!-- banner start -->
+		<div class="banner-caption clearfix">
+			<div id="title">
+				<div class="caption-title clearfix">
+					<i class="title-left"><img src="images/title-left.png" ></i>
+					<p class="title-left-title-font">市民卡数据分析</p>
+					<i class="title-left"><img src="images/title-right.png" ></i>
+				</div>
+				<div class="title-date" style="height: 40px; display: none;">
+					<p id="DateTime" style="height: 40px;text-align: center;">实时数据</p>
+				</div>
+			</div>
+			<div id="main">
+				<div class="col-md-12 ">
+					<div class="shuakashu">
+						<span class="">今日刷卡数：<span class="shuliang">15560</span></span>
+						<span class="juli">昨日刷卡数：<span class="shuliang">12000</span></span>
+						<span class="juli">本周刷卡数：<span class="shuliang">50000</span></span>
+						<span class="juli">上周刷卡数：<span class="shuliang">60000</span></span>
+						<span class="juli">本月刷卡数：<span class="shuliang">800000</span></span>
+						<span class="juli">上月刷卡数：<span class="shuliang">900000</span></span>
+					</div>	
+					</div>
+					<div  class="col-xs-12 col-sm-12 col-md-6 col-offset-4">
+							<a class=" col-md-2 more_text">查看更多</a>
+						</div>
+					<div  class="col-xs-12 col-sm-12 col-md-6 col-offset-4">
+							<a class=" col-md-2 more_text">查看更多</a>
+						</div>	
+				<div class="col-md-12" style="">
+					
+					<div class="row">
+						
+						<div id="title01" class="col-xs-12 col-sm-12 col-md-6">
+							<div class="data-box1 clearfix" id="box01">
+								<i class="topL"></i>
+								<i class="topR"></i>
+								<i class="bottomL"></i>
+								<i class="bottomR"></i>
+								<div class="data-title">
+									<b class="data-title-left">[</b>
+									<span>公交、BRT快速公交、地铁、县区公交</span>
+									<b class="data-title-right">]</b>
+								</div>
+								<div class="total-mn" id="total-mn1">
+									<span>刷卡笔数</span>
+									<!--<span class="live-box-font1"><span style="font-size: 2rem;">549462</span> 万元</span>-->
+								</div>
+								<div id="box1_top">
+									<div id="box2" class="box-echart box-bottom">
+									</div>
+								</div>
+								<div class="total-mn" id="total-mn2">
+									<span>占比</span>
+									
+								</div>
+								<div id="box1_bottom">
+									<div id="box4" class="box-echart">
+									</div>
+								</div>
+						
+							</div>
+							<div class="data-box1" id="box8-box" style="margin-top: 30px; display: none;">
+								<i class="topL"></i>
+								<i class="topR"></i>
+								<i class="bottomL"></i>
+								<i class="bottomR"></i>
+								<div class="data-title">
+									<b class="data-title-left">[</b>
+									<span>年龄段数量占比</span>
+									<b class="data-title-right">]</b>
+								</div>
+								<div id="box8" class="box-echart">
+								</div>
+							</div>
+						</div>
+						
+					<div id="title03" class="col-xs-12 col-sm-12 col-md-6" >
+						
+						<div class="data-box1" id="box04" >
+								<i class="topL"></i>
+								<i class="topR"></i>
+								<i class="bottomL"></i>
+								<i class="bottomR"></i>
+								<div class="data-title" style="width: 238px">
+									<b class="data-title-left">[</b>
+									<span>年龄段分析</span>
+									<b class="data-title-right">]</b>
+								</div>
+								<div class="total-mn" id="total-mn1">
+									<span>年龄段数量</span>
+									<!--<span class="live-box-font1"><span style="font-size: 2rem;">549462</span> 万元</span>-->
+								</div>
+								
+								
+								<div id="box5" class="box-echart box-bottom">
+								</div>
+								<div class="total-mn" id="total-mn2">
+									<span>占比</span>						
+								</div>
+								<div id="box9" class="box-echart">
+								
+							</div>
+
+							
+						</div>
+					</div>
+					<!--asad-->
+				</div>
+			</div>
+
+		</div>
+		</div>
+		<!-- JavaScript -->
+		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/echarts.min.js"></script>
+		<script type="text/javascript" src="js/guangxi.js"></script>
+		<script type="text/javascript" src="js/angular.min.js"></script>
+		<script type="text/javascript" src="js/classification.js"></script>
+		<script>
+			$(document).ready(function() {
+				$('.ym-menu li').click(function() {
+					var index = $(this).index();
+					$(this).attr('class', "ym-active").siblings('li').attr('class', 'taba');
+					$('.tabcontent').eq(index).show(200).siblings('.tabcontent').hide();
+				});
+				var t = 0;
+				var timer = setInterval(function() {
+					if(t == $('.ym-menu li').length) t = 0;
+					$('.ym-menu li:eq(' + t + ')').click();
+					t++;
+				}, 3000)
+			})
+		</script>
+	</body>
+
+</html>
