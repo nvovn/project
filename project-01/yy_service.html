@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="Author" contect="">
+		<title>服务预约</title>
+
+		<link href="css/style.css" rel="stylesheet" />
+		<link href="css/response.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/LCalendar.css" />
+		<link rel="stylesheet" type="text/css" href="css/mobileSelect.css">
+		<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+		<script src="lib/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/rem.js"></script>
+
+		<style>
+			
+		</style>
+	</head>
+
+	<body>
+		<div class="content invoice_cont">
+			
+			<div class="header">
+				<div class="head">
+					<a href="javascript:;" onclick="javascript:history.back(-1);" class="back"></a>
+					服务预约
+				</div>
+			</div>
+			<div class="forms">
+				<div class="formList clearfix">
+					<div class="formTi float-l">姓名<span class="red">*</span></div>
+					<div class="form_input float-l">
+						<input type="text" id="userName" placeholder="请输入您的真实姓名" />
+					</div>
+				</div>
+				<div class="formList clearfix">
+					<div class="formTi float-l">联系方式<span class="red">*</span></div>
+					<div class="form_input float-l">
+						<input id="phone" type="text" placeholder="请输入您的联系方式"  />
+					</div>
+				</div>
+				<div class="formList clearfix">
+					<div class="formTi float-l">车牌种类<span class="red">*</span></div>
+					<div class="form_input float-l">
+						<select class="form_sel" id="car_zl">
+							<option>请选择您的车牌种类</option>
+							<option>C1</option>
+							<option>05392019</option>
+							<option>05392019</option>
+							<option>05392019</option>
+							<option>05392019</option>
+							<option>05392019</option>
+						</select>
+					</div>
+				</div>
+				<div class="formList clearfix">
+					<div class="formTi float-l">车牌位数<span class="red">*</span></div>
+					<div class="form_input float-l">
+						<div class="check_bg">
+							<div class="check1">
+								<label for="cpw">7</label><input type="radio" onclick="xs()"  readonly="readonly" checked="" name="cpw" value="1" />
+							</div>
+							<div class="check1">
+								<label for="cpw">8</label><input type="radio" onclick="yc()"  readonly="readonly" name="cpw" value="0" />
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="formList clearfix">
+					<div class="formTi float-l">车牌号<span class="red">*</span></div>
+					<div class="form_input float-l">
+						<div class="carLicenseMain" id="carLiMain">
+							<ul id="carNum">
+								<li class="active">省</li>
+								<li></li>
+								<li></li>
+								<li></li>
+								<li></li>
+								<li></li>
+								<li></li>
+								<li class="xny" style="display: none;"></li>
+							</ul>
+						</div>
+
+					</div>
+				</div>
+
+				<div class="formList clearfix">
+					<div class="formTi float-l">车龄<span class="red">*</span></div>
+					<div class="form_input float-l">
+						<input id="carYear" type="text" placeholder="请输入您的车龄" />
+					</div>
+				</div>
+				<div class="formList clearfix">
+					<div class="formTi float-l">保险是否在保<span class="red">*</span></div>
+					<div class="form_input float-l">
+						<div class="check_bg">
+							<div class="check1">
+								<label for="xuzhi">是</label><input type="radio" name="bx" value="1" />
+							</div>
+							<div class="check1">
+								<label for="xuzhi">否</label><input type="radio" name="bx" value="0" />
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="formList fom_upload clearfix">
+					<div class="formTi">（保单需拍照上传）<span class="red">*</span></div>
+					<div class="zhl_admin_box zhl_admin_update_more" title="2">
+						<!-- 在这里更改class选择器名称，显示不同的样式-->
+						<div class="zhl_admin_update clearfix">
+							<span class="zhl_admin_imgs clearfix">
+                        
+                    </span>
+							<div class="updateInput">
+								<input type="file" class="zhl_admin_file" hidefocus multiple name="file"  accept="image/*">
+								<img src="img/icon-add.png" class="zhl_admin_img" onclick="zhl_admin_file.click()" />
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="formList clearfix">
+					<div class="formTi float-l">车辆颜色<span class="red">*</span></div>
+					<div class="form_input float-l" id="CarColor">
+						<select class="form_sel" >
+							<option>请选择车辆颜色</option>
+							<option>白色</option>
+							<option>黑色</option>
+							<option>银色</option>
+							<option>红色</option>
+							<option>蓝色</option>
+							<option>绿色</option>
+							<option>棕色</option>
+						</select>
+					</div>
+				</div>
+				<div class="formList clearfix">
+					<div class="formTi float-l">是否违章<span class="red">*</span></div>
+					<div class="form_input float-l">
+						<div class="check_bg">
+							<div class="check1">
+								<label for="xuzhi">是</label><input type="radio" name="sfwz" id="" />
+							</div>
+							<div class="check1">
+								<label for="xuzhi">否</label><input type="radio" name="sfwz"   id="" />
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--<div class="formList clearfix">
+        	<div class="formTi float-l">驾照日期<span class="red">*</span></div>
+            <div class="form_input float-l">
+            	<input type="text" placeholder="驾照领取日期" id="jz_date" readonly />
+            </div>
+        </div>-->
+				<div class="formList clearfix">
+					<div class="formTi float-l">预约时间<span class="red">*</span></div>
+					<div class="form_input float-l">
+						<input type="text" placeholder="拿车日期" id="car_date" readonly style="width:2.6rem;float:left;" />
+						<div class="car_houer_date" id="car_houer_date" style="width:2.6rem;float:right;">拿车时间</div>
+					</div>
+				</div>
+
+				<div class="formList clearfix" style="background:none;">
+					<div class="formCity float-l">
+						<div class="form_input float-l" style="width:100%;">
+							<select class="form_sel" disabled="disabled" style="width:99.5%;">
+								<option>南宁</option>
+
+							</select>
+						</div>
+					</div>
+					<div class="formCity float-r">
+						<div class="form_input float-l" style="width:100%;" id="dz_cq">
+							<select class="form_sel" style="width:99.5%;">
+								<option>城区</option>
+								<option>青秀区</option>
+								<option>西乡塘区</option>
+								<option>江南区</option>
+								<option>兴宁区</option>
+								<option>良庆区</option>
+							</select>
+						</div>
+					</div>
+				</div>
+
+				<div class="formList clearfix">
+					<div class="formTi float-l">用车地址<span class="red">*</span></div>
+					<div class="form_input float-l" id="ycdz">
+						<input type="text" placeholder="请输入您的用车地址" />
+					</div>
+				</div>
+
+
+				<div class="fuwuxuzhi"><label for="xuzhi"><input type="checkbox" checked id="xuzhi" />已阅读</label> <span class="red">服务须知</span></div>
+				<div id="registBtn" class="formsub" style="margin:.7rem auto .5rem auto;">提交</div>
+			</div>
+
+			<!--上传进度条-->
+			<div class="eject-progress-bar">
+				<!-- Progress bar -->
+				<div class="ui-progress-cont">
+					<div id="progress_bar" class="ui-progress-bar ui-container">
+						<div class="ui-progress" style="width: 100%;">
+							<span class="ui-label" style="display:none;">正在压缩上传...<b class="value">79%</b></span>
+						</div>
+					</div>
+				</div>
+				<!-- /Progress bar -->
+			</div>
+		</div>
+
+		<!--车牌键盘-->
+
+
+		<!--键盘-->
+		<div id="keyboardBox">
+			<div class="closes_keybord"><span id="closes_keyboardBox">完成</span></div>
+			<div class="provienceBox" id="provienceBox">
+				<ul>
+					<li>京</li>
+					<li>津</li>
+					<li>渝</li>
+					<li>沪</li>
+					<li>冀</li>
+					<li>晋</li>
+					<li>辽</li>
+					<li>吉</li>
+					<li>黑</li>
+					<li>苏</li>
+				</ul>
+				<ul>
+					<li>浙</li>
+					<li>皖</li>
+					<li>闽</li>
+					<li>赣</li>
+					<li>鲁</li>
+					<li>豫</li>
+					<li>鄂</li>
+					<li>湘</li>
+					<li>粤</li>
+					<li>琼</li>
+				</ul>
+				<ul>
+					<li>川</li>
+					<li>贵</li>
+					<li>云</li>
+					<li>陕</li>
+					<li>甘</li>
+					<li>青</li>
+					<li>蒙</li>
+					<li>桂</li>
+					<li>宁</li>
+					<li>新</li>
+				</ul>
+				<ul>
+					<li class="changeContentBtn other">ABC</li>
+					<li>藏</li>
+					<li>使</li>
+					<li>领</li>
+					<li>警</li>
+					<li>学</li>
+					<li>港</li>
+					<li>澳</li>
+					<li class="deleteBtn other">删除</li>
+				</ul>
+			</div>
+			<div class="textBox" id="textBox">
+
+				<ul>
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+					<li>5</li>
+					<li>6</li>
+					<li>7</li>
+					<li>8</li>
+					<li>9</li>
+					<li>0</li>
+				</ul>
+				<ul>
+					<li>Q</li>
+					<li>W</li>
+					<li>E</li>
+					<li>R</li>
+					<li>T</li>
+					<li>Y</li>
+					<li>U</li>
+					<li>I</li>
+					<li>O</li>
+					<li>P</li>
+				</ul>
+				<ul>
+					<li>A</li>
+					<li>S</li>
+					<li>D</li>
+					<li>F</li>
+					<li>G</li>
+					<li>H</li>
+					<li>J</li>
+					<li>K</li>
+					<li>L</li>
+				</ul>
+				<ul>
+					<li class="changeContentBtn other">省份</li>
+					<li>Z</li>
+					<li>X</li>
+					<li>C</li>
+					<li>V</li>
+					<li>B</li>
+					<li>N</li>
+					<li>M</li>
+					<li class="deleteBtn other">删除</li>
+				</ul>
+			</div>
+		</div>
+
+		<!--车牌键盘结束-->
+
+		<!--提示-->
+		<div class="tip-success-bg tip-tip-box">
+			<div class="tip-tip-box-nei">
+				<strong id="tishiyu">错误提示</strong>
+			</div>
+			<!--tip-tip-box/-->
+		</div>
+		<!--tip-success-bg/-->
+
+		<div class="eject eject-xuzhi">
+			<div class="eject-cont">
+				<h3 class="eject-title"> <a href="javascript:;" class="closes">&times;</a></h3>
+				<div class="messages">
+					<div class="tipsss">
+						1、检车前还要查询一下有没有违法记录，有违法记录的要处理掉，否则无法代办。<br /> 2、携带驾驶证、身份证、行驶证、当年在有效期内的交强险保单。把车辆开到拿车位置
+						<br /> 3、代办价格为200元
+						<br /> 4、验证信息：请在线填写姓名、手机号与 车牌号，以上信息须与系统预留信息保持一致。
+						<br /> 5、用户服务中心一年三百五十五/六日24小时服务。对用 户提交的服务申请，我们将在每日9:00-18:00间予以反馈。 自提交起的3个工作小时内，用户可以获得反馈。
+						<br /> 6、每日15点之前提交的合规申请，最快可以安排在第二天 拿车代办。每日15点之后的合规申请，最快可安排第三天起拿车代办。
+						<br /> 7、收到服务确认短信后，请按引导信息带好身份证、驾 驶证、保险单至指定点办理代办交接手续。
+						<br /> 8、因超过预订期限取车造成的额外车辆保管费用（包括 但不限于：租金、押金、等）由用户全额承担。
+						<br /> 9、车检代办完毕后，请到指定点取车。
+						<br /> 10、若因各种原因，用户需取消代办服务，须在预约日期 的前一日致电400，取消预订。若用户未提前一日取消，或 未使用服务但也未致电400通知取消的，视作已按预订情况 使用了服务。
+						<br />
+
+					</div>
+				</div>
+				<!--messages/-->
+			</div>
+			<!--eject-cont/-->
+		</div>
+		<!--eject-redbag/-->
+		<div class="bg100"></div>
+		<!--<script src="js/style.js"></script>-->
+		<script src="js/progress.js"></script>
+		<!--进度条插件-->
+		<script src="js/tools.js"></script>
+		<!--图片压缩-->
+		<script src="js/upload.js"></script>
+		<!--图片上传-->
+		<script src="js/LCalendar.js"></script>
+		<!--日期控件-->
+		<script src="js/mobileSelect.min.js"></script>
+		<script src="js/zepto.js"></script>
+		<!--校验-->
+		<script type="text/javascript">
+		//时间选择
+			var calendar = new lCalendar();
+			calendar.init({
+				'trigger': '#car_date',
+				'type': 'date',
+				'minDate': '2015-1-1', //最小日期 注意：该值会覆盖标签内定义的日期范围
+				'maxDate': '2020-12-31' //最大日期 注意：该值会覆盖标签内定义的日
+			});
+			//时间选择
+			var numArr1 = ['10时', '11时', '12时', '13时', '14时', '15时', '16时', '17时', '18时'];
+			var numArr2 = ['01分', '02分', '03分', '04分', '05分', '06分', '07分', '08分', '09分', '10分', '11分', '12分', '13分', '14分', '15分', '16分', '17分', '18分', '19分', '20分', '21分', '22分', '23分', '24分', '25分', '26分', '27分', '28分', '29分', '30分', '31分', '32分', '33分', '34分', '35分', '36分', '37分', '38分', '39分', '40分', '41分', '42分', '43分', '44分', '45分', '46分', '47分', '48分', '49分', '50分', '51分', '52分', '53分', '54分', '55分', '56分', '57分', '58分', '59分', '60分'];
+			var mobileSelect3 = new MobileSelect({
+				trigger: '#car_houer_date',
+				title: '选择时间',
+				wheels: [
+					{ data: numArr1 },
+					{ data: numArr2 },
+				],
+				position: [0, 0, 0],
+				//transitionEnd:function(indexArr, data){
+				//    console.log(data);
+				//},
+				callback: function(indexArr, data) {
+					//$("#trigger3").html("ccccccccccccccccccccc");
+
+				}
+			});
+			
+			$(function () {
+			    //获取浏览器的userAgent,并转化为小写
+			    var ua = navigator.userAgent.toLowerCase();
+			    //判断是否是苹果手机，是则是true
+			    var isIos = (ua.indexOf('iphone') != -1) || (ua.indexOf('ipad') != -1);
+			    if (isIos) {
+			        $("input:file").removeAttr("capture");
+			    };
+			})
+
+
+			
+		</script>
+		
+		<script type="text/javascript" src="js/regist.js"></script>
+		<script type="text/javascript" src="js/keybot.js" ></script>
+	</body>
+
+</html>

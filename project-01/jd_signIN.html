@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="Author" contect="">
+		<title>接单人注册</title>
+
+		<link href="css/style.css" rel="stylesheet" />
+		<link href="css/response.css" rel="stylesheet" />
+		<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+		<script src="lib/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/rem.js"></script>
+
+		<style>
+			
+		</style>
+	</head>
+
+	<body>
+		<div class="content invoice_cont">
+			
+			<div class="header">
+				<div class="head">
+					<a href="javascript:;" onclick="javascript:history.back(-1);" class="back"></a>
+					接单人注册
+				</div>
+			</div>
+			<div class="forms">
+				<div class="formList clearfix">
+					<div class="formTi float-l">姓名<span class="red">*</span></div>
+					<div class="form_input float-l">
+						<input type="text" id="userName" placeholder="请输入您的真实姓名" />
+					</div>
+				</div>
+				<div class="formList clearfix">
+					<div class="formTi float-l">微信号<span class="red">*</span></div>
+					<div class="form_input float-l">
+						<input id="weixin" type="text" placeholder="请输入您的联系方式"  />
+					</div>
+				</div>
+				<div class="formList clearfix">
+					<div class="formTi float-l">手机号<span class="red">*</span></div>
+					<div class="form_input float-l">
+						<input id="phone" type="text" placeholder="请输入手机号码" />
+					</div>
+				</div>
+				<div class="formList clearfix">
+					<div class="formTi float-l">身份证号码<span class="red">*</span></div>
+					<div class="form_input float-l">
+						<input id="sfzhm" type="text" placeholder="请输入您的身份证号码"  />
+					</div>
+				</div>
+				<div class="formList clearfix">
+					<div class="formTi float-l">登录密码<span class="red">*</span></div>
+					<div class="form_input float-l">
+						<input id="jdmm" type="password" placeholder="请输入密码英文加数字至少六位"  />
+					</div>
+				</div>
+				<div class="formList clearfix">
+					<div class="formTi float-l">重复密码<span class="red">*</span></div>
+					<div class="form_input float-l">
+						<input id="re_jdmm" type="password" placeholder="重复密码"  />
+					</div>
+				</div>
+			<div id="jd_loginBtn" class="formsub" style="margin:.7rem auto .5rem auto;">注册</div>
+			</div>
+
+		</div>
+
+		<!--eject-redbag/-->
+		<div class="bg100"></div>
+		<script src="js/mobileSelect.min.js"></script>
+		<script src="js/zepto.js"></script>
+		<!--校验-->
+		<script type="text/javascript" src="js/jd_regist.js"></script>
+	</body>
+</html>

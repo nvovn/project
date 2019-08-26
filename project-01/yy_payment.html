@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>缴费</title>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/payment.css" />
+		<script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="lib/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="css/style1.css" />
+	</head>
+
+	<body>
+		<div class="container">
+			<header class="aui-navBar aui-navBar-fixed b-line">
+				<a href="yy_com.html" class="aui-navBar-item">
+					<i class="icon icon-return"></i>
+				</a>
+				<div class="aui-center">
+					<span class="aui-center-title">订单支付</span>
+				</div>
+			</header>
+			<div class="licensePlate">
+				<ul class="licensePlateTxt" >
+					<li >桂A123456</li>
+				</ul>
+			</div>
+			<div class="timeMoney">
+				<div class="allTime">
+					<p>取车时间：20190710</p>
+					<p class="red">已确认联系</p>
+					<div class="lineCol"></div>
+				</div>
+				<div class="shouldPay">
+					<p>应付金额</p>
+					<p class="red">￥<span>200</span></p>
+				</div>
+				<div class="lineRow"></div>
+			</div>		
+			<div class="paymentMethod">
+				<div class="alipay" id="alipay">
+					<dl>
+						<dt><img src="img/weixin.jpg"/></dt>
+						<dd>
+							<p>微信支付</p>
+							<p>支付金额：<span class="red">￥200.00</span></p>
+						</dd>
+					</dl>
+				</div>
+			</div>
+			<div class="goPay">
+				<div class="goPayTxt">
+					合计:<span>￥200.00</span>
+				</div>
+				<button class="goPayBtn" id="goPayBtn">结算</button>
+			</div>
+		</div>
+		<div class="payConfirmBox">
+			<div class="payConfirm">
+				<p>支付确认</p>
+				<div class="stopInfo">
+					<p><span class="fl">车牌号:</span><span class="fr">桂AK47F</span></p>
+					<p><span class="fl">取车时间:</span><span class="fr">2019-07-12 09:30:00</span></p>
+					<p><span class="fl">总金额:</span><span class="fr">200元</span></p>
+					<div class="lineRow"></div>
+				</div>
+				<div class="payInfo">
+					<h3>支付信息</h3>
+					<p><span class="fl">微信宝缴费:</span><span class="fr">200元</span></p>
+				</div>
+				<div class="btns">
+					<div class="lineRow"></div>
+					<div class="payBtn">
+						支付
+						<div class="lineCol"></div>
+					</div>
+					<div class="cancleBtn">
+						取消
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="js/payment.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>
